@@ -1,4 +1,5 @@
 ## QUESTION 1
+require "pry"
 
 pokemon = [
   {
@@ -59,6 +60,48 @@ pokemon = [
   ]
 }
 ]
+def select_bulbasaur(pokemon)
+  bulbasaur=pokemon.select do |name|
+    name[:name] == "bulbasaur"
+  end
+
+  bulbasaur[0][:abilities][0][:ability][:url]
+end
+
+def find(pokemon)
+  bulbasaur=pokemon.find do |experience|
+    experience[:base_experience]>40
+  end
+
+  bulbasaur
+end
+
+def find_all(pokemon)
+  bulbasaur=pokemon.select do |experience|
+    experience[:base_experience]>40
+  end
+
+  bulbasaur
+end
+
+def select_names(pokemon)
+
+  pokemon.map do |name|
+    name[:name]
+  end
+end
+
+def weight?(pokemon)
+  pokemon.any? do |name|
+    name[:weight]>60
+  end
+
+end
+
+binding.pry
+true
+
+
 
 
 # How would you get the url for Bulbasaur's ability?
